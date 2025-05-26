@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/logo.png" alt="logo" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarsExample02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/message.html">Send message</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <div class="text-center mb-4">
+            <h1>All Messages</h1>
+        </div>
+
+        {% if messages %}
+            <div class="list-group">
+                {% for timestamp, message in messages.items() %}
+                    <div class="list-group-item">
+                        <small class="text-muted">{{ timestamp }}</small>
+                        <h5><strong>{{ message.username }}:</strong></h5>
+                        <p>{{ message.message }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No messages found.</p>
+        {% endif %}
+
+        <div class="mt-4 text-center">
+            <a href="/" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cuVlxSc7uPSHft5B5dQbOjj9jl3f9A3C8KXaQ80j2V4K5EJE6X+g1v7N3nfu0eEK" crossorigin="anonymous"></script>
+</body>
+</html>

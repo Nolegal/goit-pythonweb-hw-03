@@ -1,0 +1,23 @@
+# Ignoring the virtual environment
+venv/
+.env/
+
+# Ignoring PyCharm/VSCode files
+.idea/
+.vscode/
+
+# Ignoring system files
+.DS_Store
+Thumbs.db
+
+# Ignoring compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignoring files for tests (if using pytest)
+*.cover
+*.hypothesis/
+
+# Ignoring logs
+*.log
